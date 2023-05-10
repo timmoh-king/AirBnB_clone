@@ -1,0 +1,2 @@
+Your file organization in the tests folder should be the same as your project
+unit tests must be in: tests/test_models/test_base_model.py
