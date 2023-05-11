@@ -10,6 +10,7 @@ import uuid
 class BaseModel:
     """defines all common attributes/methods for other classes"""
     def __init__(self, *args, **kwargs):
+        from models import storage
         """
             Declare the public instances:
             Id (string): assign with an uuid
@@ -26,6 +27,8 @@ class BaseModel:
                     v = getattr(self, k)
                 else:
                     v = setattr(self, k, v)
+        else:
+            storage.new(self)
 
     def __str__(self):
         """should print [<class name>] (<self.id>) <self.__dict__>"""
@@ -33,13 +36,16 @@ class BaseModel:
                 type(self).__name__, self.id, self.__dict__)
 
     def save(self):
+        from models import storage
         """updates the public inst attr updated_at with the curr datetime"""
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """returns a dict containing all key/val of __dict__ of the inst"""
-        new_dict = {'id': self.id, 'created_at': self.created_at.isoformat(),
-                    '__class__': type(self).__name__,
-                    'updated_at': self.updated_at.isoformat()}
-        new_dict.update(**self.__dict__)
+        new_dict = self.__dict__.copy()
+        new_dict['id'] = self.id
+        new_dict['created_at'] = self.created_at.isoformat()
+        new_dict['__class__'] = type(self).__name__
+        new_dict['updated_at'] = self.updated_at.isoformat()
         return new_dict
