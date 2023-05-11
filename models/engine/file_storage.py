@@ -5,6 +5,7 @@
     deserializes JSON file to instances
 """
 import json
+from models.base_model import BaseModel
 
 
 class FileStorage:
@@ -43,10 +44,11 @@ class FileStorage:
 
         try:
             with open(json_file, mode="r") as f:
+                json_str = f.read()
                 new_dict = json.loads(json_str)
 
                 for k, v in new_dict.items():
                     if 'BaseModel' in k:
                         new_dict[k] = BaseModel(**v)
-        except Exception:
+        except FileNotFoundError:
             pass
