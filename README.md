@@ -11,3 +11,16 @@
 - What is *args and how to use it
 - What is **kwargs and how to use it
 - How to handle named arguments in a function
+
+### COMMAND LINE INTERPRETER
+- Create a new object (ex: a new User or a new Place)
+- Retrieve an object from a file, a database etc…
+- Do operations on objects (count, compute stats, etc…)
+- Update attributes of an object
+- Destroy an object
+
+### HOW TO START IT
+
+### HOW TO USE IT
+
+### EXAMPLES
