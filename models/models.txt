@@ -1,2 +1,0 @@
-Your file organization in the tests folder should be the same as your project
-e.g., For models/base_model.py
