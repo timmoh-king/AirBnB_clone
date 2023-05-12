@@ -70,13 +70,6 @@ class FileStorage:
                         new_dict[k] = Review(**v)
 
                     FileStorage.__objects.update(new_dict)
-            """with open(json_file, mode='r', encoding='utf-8') as f:
-                file_objects = json.load(f)
-
-            for k, v in file_objects.items():
-                cls_name = v['__class__']
-                del v['__class__']
-                self.new(eval(cls_name)(**v))"""
 
         except FileNotFoundError:
             pass
