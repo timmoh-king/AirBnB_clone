@@ -21,12 +21,12 @@ class BaseModel:
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
-        if len(kwargs) != 0:
+        if kwargs:
             for k, v in kwargs.items():
-                if hasattr(self, k):
-                    v = getattr(self, k)
-                else:
-                    v = setattr(self, k, v)
+                if k == "created_at" or k == "updated_at":
+                    v = datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%f")
+                if k != "__class__":
+                    setattr(self, k, v)
         else:
             storage.new(self)
 
