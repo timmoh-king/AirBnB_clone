@@ -6,6 +6,12 @@
 """
 import json
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage:
@@ -50,5 +56,17 @@ class FileStorage:
                 for k, v in new_dict.items():
                     if 'BaseModel' in k:
                         new_dict[k] = BaseModel(**v)
+                    if 'User' in k:
+                        new_dict[k] = User(**v)
+                    if 'State' in k:
+                        new_dict[k] = State(**v)
+                    if 'City' in k:
+                        new_dict[k] = City(**v)
+                    if 'Amenity' in k:
+                        new_dict[k] = Amenity(**v)
+                    if 'Place' in k:
+                        new_dict[k] = Place(**v)
+                    if 'Review' in k:
+                        new_dict[k] = Review(**v)
         except FileNotFoundError:
             pass
