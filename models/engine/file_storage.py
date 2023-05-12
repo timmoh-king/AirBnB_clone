@@ -68,5 +68,7 @@ class FileStorage:
                         new_dict[k] = Place(**v)
                     if 'Review' in k:
                         new_dict[k] = Review(**v)
+
+                    FileStorage.__objects.update(new_dict)
         except FileNotFoundError:
             pass
