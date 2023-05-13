@@ -17,16 +17,17 @@ class BaseModel:
             created_at (datetime): the curr datetime when an inst is created
             updated_at (datetime): the curr datetime when an inst is updated
         """
+        date_form = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
-        if kwargs:
+        if len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "created_at" or k == "updated_at":
-                    v = datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%f")
-                if k != "__class__":
-                    setattr(self, k, v)
+                    self.__dict__[k] = datetime.strptime(v, date_form)
+                else:
+                    self.__dict__[k] = v
         else:
             storage.new(self)
 
