@@ -21,6 +21,24 @@
 
 ### HOW TO START IT
 
+```go
+package main
+
+import "fmt"
+
+const (
+	x = iota
+	y = iota
+)
+const z = iota
+
+func main() {
+	fmt.Printf("%v\n", x)
+	fmt.Printf("%v\n", y)
+	fmt.Printf("%v\n", z)
+}
+```
+
 ### HOW TO USE IT
 
 ### EXAMPLES
