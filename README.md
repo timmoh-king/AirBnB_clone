@@ -19,26 +19,28 @@
 - Update attributes of an object
 - Destroy an object
 
-### HOW TO START IT
+<details>
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230516%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230516T071609Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=6ea8558b15df9a4165db0921eeb4a42b5df2bc326ad5238ff98b5068110c4dd7" />
+</details>
 
-```go
-package main
+<details>
+<img src = "https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230516%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230516T071609Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c74454b7aa2103e4d2ee3c0b5a0efa412be46abdb789fdb92d284601c971468e" />
+</details>
 
-import "fmt"
+### THE CONSOLE
+```
+(hbnb) help
 
-const (
-	x = iota
-	y = iota
-)
-const z = iota
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
 
-func main() {
-	fmt.Printf("%v\n", x)
-	fmt.Printf("%v\n", y)
-	fmt.Printf("%v\n", z)
-}
+(hbnb) 
+(hbnb) 
+(hbnb) quit
 ```
 
-### HOW TO USE IT
-
-### EXAMPLES
+```
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
+```
