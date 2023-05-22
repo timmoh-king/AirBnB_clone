@@ -19,3 +19,23 @@
 .filters button:hover{
     opacity: 90%;
 }
+.locations,
+.amenities{
+    display: inline-block;
+    height: 100%;
+    width: 25%;
+}
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+.filters h3{
+    font-weight: 600;
+    line-height: 0px;
+    padding-left: 30px;
+    margin-top: 28px;
+}
+.filters h4 {
+    font-weight: 400;
+    line-height: 0px;
+    padding-left: 30px;
+}
