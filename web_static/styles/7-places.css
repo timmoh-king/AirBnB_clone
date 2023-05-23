@@ -7,8 +7,7 @@
     border-radius: 4px;
 }
 .places article:hover {
-    border-top: 2px;
-    border-bottom: 2px;
+    border: 2px solid #f09597;
 }
 .places h1 {
     font-size: 30px;
